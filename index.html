@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Back, Linz!</title>
+    <!-- Include Shoji CSS for Japanese aesthetics -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/shoji-css/shoji.min.css">
+    <!-- Include Sakura CSS for a lightweight, clean design -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sakura.css/css/sakura.css">
+    <!-- Include Font Awesome for Japanese-style icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Sawarabi Mincho', sans-serif; /* Japanese-inspired font */
+            background-color: #C5E4C3; /* Light sage green */
+            background-image: url('https://images.unsplash.com/photo-1572324979935-d5c8f9a894e2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1920'); /* Background Japanese house */
+            background-size: cover;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            overflow: hidden;
+        }
+        .welcome-section {
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-bottom: 2px solid #98B98E;
+        }
+        .icon-container {
+            margin: 20px auto;
+            font-size: 3rem;
+            color: #C04848; /* Deep red like Torii gates */
+        }
+        .floating-icons {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            z-index: 10;
+        }
+        .floating-icons i {
+            font-size: 2rem;
+            margin: 10px;
+            color: #C04848; /* Japanese Torii gate color */
+        }
+        .image-container {
+            display: inline-block;
+            position: relative;
+            margin: 10px;
+        }
+        .character-image {
+            width: 100px;
+            height: auto;
+            border-radius: 10px;
+        }
+        .text-bubble {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: white;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+        .main-content {
+            display: none;
+            padding: 20px;
+        }
+        .reference-item {
+            margin: 20px 0;
+            cursor: pointer;
+            color: #4F7942;
+        }
+        .hidden-text {
+            display: none;
+            margin-left: 20px;
+            color: #3A5F30;
+        }
+        footer {
+            background-color: #C04848;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
+    <script>
+        function enterWebsite() {
+            document.querySelector('.welcome-section').style.display = 'none';
+            document.querySelector('.main-content').style.display = 'block';
+        }
+        function toggleText(id) {
+            const text = document.getElementById(id);
+            text.style.display = text.style.display === 'block' ? 'none' : 'block';
+        }
+    </script>
+</head>
+<body>
+    <!-- Floating Japanese architecture icons -->
+    <div class="floating-icons">
+        <i class="fas fa-torii-gate"></i> <!-- Torii Gate -->
+        <i class="fas fa-landmark"></i> <!-- Pagoda -->
+        <i class="fas fa-fan"></i> <!-- Japanese fan -->
+    </div>
+
+    <div class="welcome-section">
+        <h1>Welcome Back, Linz!</h1>
+        <!-- Japanese-style fan icon -->
+        <div class="icon-container">
+            <i class="fas fa-fan"></i>
+        </div>
+        <div class="image-container">
+            <img src="IMG_4710.jpg" class="character-image" alt="Character 1">
+            <div class="text-bubble" onclick="enterWebsite()">Welcome back, LINZ!</div>
+        </div>
+        <div class="image-container">
+            <img src="IMG_4711.jpg" class="character-image" alt="Character 2">
+            <div class="text-bubble" onclick="enterWebsite()">Welcome back, LINZ!</div>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <h1 style="color: #C04848;">Discover Japanese Architecture</h1>
+        <p>Click on the items below to reveal more information:</p>
+        <div class="reference-item" onclick="toggleText('ref1')">
+            1. Game of Thrones References
+        </div>
+        <div id="ref1" class="hidden-text">Coque, Ballz, Whore, Brothel</div>
+        
+        <div class="reference-item" onclick="toggleText('ref2')">
+            2. Favorite Characters
+        </div>
+        <div id="ref2" class="hidden-text">Inosuke, Harley Quinn, Badtz Maru</div>
+        
+        <div class="reference-item" onclick="toggleText('ref3')">
+            3. Favorite Animes
+        </div>
+        <div id="ref3" class="hidden-text">Hunter x Hunter, Tokyo Revengers, Demon Slayer, Chainsaw Man, Dr. Stone, Sakamoto Days</div>
+        
+        <div class="reference-item" onclick="toggleText('ref4')">
+            4. Favorite Phrases
+        </div>
+        <div id="ref4" class="hidden-text">Bow Bow Bow, Bitch yk I'm sexy, You ain't Demure, Grubbingtins, It's grub o'clock</div>
+    </div>
+    <footer>
+        Inspired by Japanese architecture with ❤️ for Linz.
+    </footer>
+</body>
+</html>
